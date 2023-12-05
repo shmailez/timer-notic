@@ -1,22 +1,18 @@
 import './App.css';
 
 function App() {
-
-
-  const button = document.querySelector('button')
-
-  button.addEventListener('click', () => {
+  const notic = () => {
     Notification.requestPermission().then(perm => {
       if(perm === 'granted') {
         new Notification("Fuck OGG")
       }
     })
-  })
+  }
   
   return (
     <div className="App">
       <header className="App-header">
-      <button>clik</button>
+      <button onClick={() => notic()}>clik</button>
       </header>
     </div>
   );
